@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <h1>🧮 Simple Calculator</h1>
+    <div class="calculator">
+      <input id="display" class="display" type="text" inputmode="decimal" aria-label="Calculator display" readonly />
+      <div class="keys" role="group" aria-label="Calculator keys">
+        <button data-action="clear" class="span-2">C</button>
+        <button data-action="delete">⌫</button>
+        <button data-op="÷">÷</button>
+
+        <button data-num="7">7</button>
+        <button data-num="8">8</button>
+        <button data-num="9">9</button>
+        <button data-op="×">×</button>
+
+        <button data-num="4">4</button>
+        <button data-num="5">5</button>
+        <button data-num="6">6</button>
+        <button data-op="-">−</button>
+
+        <button data-num="1">1</button>
+        <button data-num="2">2</button>
+        <button data-num="3">3</button>
+        <button data-op="+">+</button>
+
+        <button data-num="0" class="span-2">0</button>
+        <button data-dot=".">.</button>
+        <button data-action="equals" class="accent">=</button>
+      </div>
+    </div>
+    <footer>
+      <small>Built with Node.js + Express. Keyboard: 0-9 . + - * / Enter Backspace Esc</small>
+    </footer>
+  </div>
+  <script src="app.js" defer></script>
+</body>
+</html>

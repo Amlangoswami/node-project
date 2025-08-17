@@ -1,0 +1,69 @@
+:root {
+  --bg: #0b1220;
+  --panel: #121a2a;
+  --text: #e6eefc;
+  --muted: #9fb3d1;
+  --key: #1a2438;
+  --key-accent: #2b59ff;
+  --key-equal: #22c55e;
+  --shadow: rgba(0,0,0,.25);
+  --radius: 16px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100svh; display: grid; place-items: center;
+  background: radial-gradient(1200px 1200px at 20% 10%, #18213a, var(--bg));
+  color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.app { width: min(480px, 94vw); padding: 24px; }
+h1 { text-align: center; font-weight: 700; letter-spacing: .3px; margin: 0 0 18px; }
+.calculator {
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: 0 8px 30px var(--shadow), inset 0 0 0 1px rgba(255,255,255,.03);
+}
+.display {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #0b1427;
+  color: var(--text);
+  font-size: 32px;
+  text-align: right;
+  padding: 18px 16px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.05);
+}
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+button {
+  appearance: none;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 0;
+  font-size: 18px;
+  font-weight: 600;
+  background: var(--key);
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: 0 6px 16px var(--shadow), inset 0 0 0 1px rgba(255,255,255,.04);
+  transition: transform .05s ease, filter .2s ease;
+}
+button:hover { filter: brightness(1.06); }
+button:active { transform: translateY(1px) scale(.995); }
+button.accent { background: linear-gradient(135deg, var(--key-accent), #7ca6ff); }
+button[data-op] { background: #13223d; }
+button[data-action="equals"] { background: linear-gradient(135deg, var(--key-equal), #84e1ae); color: #0b1220; }
+.span-2 { grid-column: span 2; }
+footer { margin-top: 12px; text-align: center; color: var(--muted); }
+@media (prefers-color-scheme: light) {
+  :root { --bg: #eff4ff; --panel: #ffffff; --text: #0b1220; --muted: #4b5563; --key: #e9eefb; }
+  body { background: #eff4ff; }
+  .display { background: #f3f6ff; box-shadow: inset 0 0 0 1px rgba(0,0,0,.05); }
+  button[data-op] { background: #dde6fb; }
+}
